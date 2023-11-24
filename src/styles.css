@@ -1,1 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
+.carousel-control-next-icon,.carousel-control-prev-icon{
+    background-color: black;
+    border-radius: 5px;
+}
+.common-form{
+   
+   border: 1px solid;
+   border-radius: 5px;
+   background-color:#0a7543;
+  
+   padding: 25px;
+    display: flex;
+    flex-direction: column;
+   min-width: 320px;
+   min-height: 340px;
+    margin: 20px;
+    
+}
+.form-input{
+    height: 40px;
+    margin-bottom: 15px;
+    border: 2px solid #0a7543 ;
+    border-radius: 5px;
+    padding: 5px;
+}
+.form-button{
+    
+    background: #3c3939;
+    color: white;
+    border: 2px solid #0a7543 ;
+    border-radius: 5px;
+    padding: 6px;
+   
+}
+.form-button:hover{
+    background-color:gray;
+}
+.logout{
+    cursor: pointer;
+}
+.message{
+    color: green;
+    text-align: center;
+}

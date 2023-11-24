@@ -1,0 +1,11 @@
+.add-product{
+    display: flex;
+    justify-content: center;
+}
+.add-product h2{
+    text-align: center;
+    color: #ddd;
+    margin-bottom: 20px;
+   
+   
+}

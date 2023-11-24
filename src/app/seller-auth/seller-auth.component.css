@@ -1,0 +1,20 @@
+.signUp{
+    display: flex;
+    justify-content: center;
+}
+.signUp h2{
+    text-align: center;
+    color: #ddd;
+    margin-bottom: 20px;
+   
+}
+.auth-toggle-link{
+    margin-top: 10px;
+    color:aliceblue;
+    cursor: pointer;
+    text-align: right;
+    font-size: 14px;
+}
+.auth-toggle-link:hover{
+    color:rgb(142, 131, 131)
+}

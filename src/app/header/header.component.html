@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+  
+  
+      <a class="navbar-brand" routerLink="">
+        <h1><img src="assets/icon.png" alt=".png" width=""><b>-CART</b></h1>
+      </a>
+      <form class="d-flex" role="search" *ngIf="menuType !== 'seller'">
+        <input class="form-control me-2" type="search" placeholder="Search Items" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+  
+      <!--collapse navbar-collapse -->
+      <div class="" id="navbarSupportedContent" [ngSwitch]="menuType">
+        <ul class="navbar-nav " *ngSwitchCase="'default'">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/seller">Seller</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">SignUp/LogIn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">MyOrder</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cart(0)</a>
+          </li>
+        </ul>
+        <!--for seller-->
+        <ul class="navbar-nav" *ngSwitchCase="'seller'">
+          <li class="nav-item">
+            <a class="nav-link active"  routerLink='/seller-home'>Product-List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="seller-add-product">Add-Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link logout" (click)="logout()">Logout</a>
+          </li>
+          
+       
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">MyOrder</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cart(0)</a>
+          </li> -->
+        </ul>
+  
+      </div>
+    </div>
+  </nav>

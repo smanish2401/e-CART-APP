@@ -1,0 +1,9 @@
+.navbar-brand h1{
+    color: #0a7543;
+}
+
+
+.form-control{
+    min-width: 350px;
+    height: 50px;
+}

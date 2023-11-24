@@ -1,0 +1,36 @@
+<div class="product-list container">
+    <h2>Product-List</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Color</th>
+                <th>Category</th>
+                <th>Discription</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of productList">
+                <td> <img [src]="item.image" alt=".png"></td>
+                <td> {{item.name}}</td>
+                <td> {{item.price}}</td>
+                <td> {{item.color}}</td>
+                <td> {{item.category}}</td>
+                <td> {{item.description}}</td>
+                <td><fa-icon style="cursor: pointer" ngbTooltip="Delete"  (click)="deleteProduct(item.id)"  [icon]="icon"></fa-icon>
+                    <a href="" ngbTooltip="Edit" class="update-link"><fa-icon [icon]="editIcon" ></fa-icon></a>   
+                </td>
+                   
+            </tr>
+        </tbody>            
+                
+               
+
+    </table>
+   
+    
+
+</div>

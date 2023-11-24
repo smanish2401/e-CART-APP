@@ -1,0 +1,11 @@
+.product-img{
+    object-fit: contain;
+    height: 400px;
+    width: 100%;
+    margin-top: 40px;
+}
+.carousel-caption{
+background-color: rgba(27, 30, 28, 0.636);
+border-radius: 5px;
+
+}
