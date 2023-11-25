@@ -20,8 +20,8 @@
                 <td> {{item.color}}</td>
                 <td> {{item.category}}</td>
                 <td> {{item.description}}</td>
-                <td><fa-icon style="cursor: pointer" ngbTooltip="Delete"  (click)="deleteProduct(item.id)"  [icon]="icon"></fa-icon>
-                    <a href="" ngbTooltip="Edit" class="update-link"><fa-icon [icon]="editIcon" ></fa-icon></a>   
+                <td><fa-icon style="cursor: pointer" ngbTooltip="Delete"  (click)="deleteProduct(item.id)"   [icon]="icon"></fa-icon>
+                    <a routerLink="/seller-update-product/{{item.id}}" ngbTooltip="Edit" class="update-link"><fa-icon [icon]="editIcon" ></fa-icon></a>   
                 </td>
                    
             </tr>

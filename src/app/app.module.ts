@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomeComponent,
     SellerAuthComponent,
     SellerAddProductComponent,
-    SellerHomeComponent
+    SellerHomeComponent,
+   
+    SellerUpdateProductComponent
   ],
   imports: [
     BrowserModule,
