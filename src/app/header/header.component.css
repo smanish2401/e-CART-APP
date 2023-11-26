@@ -7,3 +7,8 @@
     min-width: 350px;
     height: 50px;
 }
+.seller-name{
+    color:#0a7543; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    cursor: pointer;
+}

@@ -14,7 +14,7 @@
       <div class="" id="navbarSupportedContent" [ngSwitch]="menuType">
         <ul class="navbar-nav " *ngSwitchCase="'default'">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+            <a class="nav-link active" aria-current="page"  routerLink="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/seller">Seller</a>
@@ -32,13 +32,17 @@
         <!--for seller-->
         <ul class="navbar-nav" *ngSwitchCase="'seller'">
           <li class="nav-item">
-            <a class="nav-link active"  routerLink='seller-home'>Product-List</a>
+            <a class="nav-link active" title="product-list"  routerLink='seller-home'>Product-List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="seller-add-product">Add-Product</a>
+            <a class="nav-link" routerLink="seller-add-product" title="Add-Product">Add-Product</a>
           </li>
+       
+        <li class="nav-item">
+        <span class="nav-link seller-name" ngbTooltip="seller"><fa-icon style="margin-right: 5px;"  [icon]="icon"></fa-icon>{{sellerName | titlecase}}</span>
+        </li>
           <li class="nav-item">
-            <a class="nav-link logout" (click)="logout()">Logout</a>
+            <a class="nav-link logout" (click)="logout()" style="color: red;" title="logout">Logout</a>
           </li>
           
        

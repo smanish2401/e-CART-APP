@@ -36,6 +36,9 @@ deleteProduct(id:number){
       this.deleteMessage="Product deleted";
       this.list()
     }
+    setTimeout(() => {
+      this.deleteMessage=undefined
+    },2000);
   })
 }
 }

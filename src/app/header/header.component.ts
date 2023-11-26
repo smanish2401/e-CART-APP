@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -8,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 menuType:string='default';
+sellerName:string=''
+icon=faUser
   constructor( private route:Router) {}
 
   ngOnInit():void{
@@ -16,7 +19,13 @@ this.route.events.subscribe((val:any)=>{
     //console.warn(val.url)
     if(localStorage.getItem('seller') && val.url.includes('seller')){
      // console.warn('In seller area');
-      this.menuType='seller'
+     let sellerStore=localStorage.getItem('seller');
+     let sellerData=sellerStore && JSON.parse(sellerStore)[0]
+     this.menuType='seller';
+     this.sellerName=sellerData.name
+      
+      
+      
     }
     else{
       this.menuType='default'
