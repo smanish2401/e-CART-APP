@@ -9,3 +9,10 @@
    
    
 }
+.edit-form{
+    width: 400px;
+}
+.label{
+    text-align: start;
+    color: aliceblue;
+}
