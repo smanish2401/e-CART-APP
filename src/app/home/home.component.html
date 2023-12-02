@@ -1,11 +1,12 @@
 <div class="container">
-    <!-- <div class="text-center">
+     <div class="text-center" *ngIf="isLoading">
         <div class="spinner-border text-success"  style="width: 3rem; height: 3rem;" role="status">
           <span class="visually-hidden">Loading...</span>
         </div>
-      </div> -->
+       
+      </div> 
 	
-    <ngb-carousel *ngIf="popularProducts">
+    <ngb-carousel *ngIf="popularProducts && !isLoading">
         <ng-template *ngFor="let item of popularProducts" ngbSlide>
             <div class="picsum-img-wrapper">
                 <img [src]="item.image" class="product-img" alt="product-img" />
@@ -17,5 +18,10 @@
         
         </ng-template>
     </ngb-carousel>
+
+    <div class="product-list-wrapper" *ngIf="!isLoading">
+        <h2>Trendy Products</h2>
+
+    </div>
     </div>
     
