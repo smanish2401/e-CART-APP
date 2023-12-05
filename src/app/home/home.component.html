@@ -21,6 +21,20 @@
 
     <div class="product-list-wrapper" *ngIf="!isLoading">
         <h2>Trendy Products</h2>
+        <div class="row">
+            <div class="col-sm-3" *ngFor="let item of trendyProducts">
+                <div class="product-item">
+                    <img src="{{item.image}}" alt="">
+
+                </div>
+                
+               
+            
+                
+               
+            </div>
+
+        </div>
 
     </div>
     </div>

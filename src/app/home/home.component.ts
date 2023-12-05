@@ -9,6 +9,7 @@ import { product } from '../data-types';
 })
 export class HomeComponent {
 popularProducts: undefined | product[]
+trendyProducts: undefined | product[]
 isLoading:boolean=false;
   constructor(private product:ProductsService) {}
 
@@ -18,6 +19,12 @@ isLoading:boolean=false;
       if(data){
         console.log(`popular products ${data}`)
         this.popularProducts=data
+       
+      }
+    })
+    this.product.trendyProducts().subscribe((data)=>{
+      if(data){
+        this.trendyProducts= data;
         setTimeout(() => {
           this.isLoading=false
         },1000);
