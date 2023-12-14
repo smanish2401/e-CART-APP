@@ -7,6 +7,7 @@ import { authGuard } from './auth.guard';
 import { SellerAddProductComponent } from './seller-add-product/seller-add-product.component';
 
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
+import { SearchProductComponent } from './search-product/search-product.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   component:SellerUpdateProductComponent,
   path:'seller-update-product/:id',
   canActivate:[authGuard]
+ },
+ {
+  component:SearchProductComponent,
+  path:'search/:query',
  }
 ];
 

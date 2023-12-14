@@ -14,6 +14,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
+import { SearchProductComponent } from './search-product/search-product.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
     SellerAddProductComponent,
     SellerHomeComponent,
    
-    SellerUpdateProductComponent
+    SellerUpdateProductComponent,
+        SearchProductComponent
   ],
   imports: [
     BrowserModule,
