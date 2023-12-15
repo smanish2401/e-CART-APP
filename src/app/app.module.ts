@@ -15,6 +15,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
 import { SearchProductComponent } from './search-product/search-product.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SearchProductComponent } from './search-product/search-product.componen
     SellerHomeComponent,
    
     SellerUpdateProductComponent,
-        SearchProductComponent
+        SearchProductComponent,
+        ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

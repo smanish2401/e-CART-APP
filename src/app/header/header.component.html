@@ -7,8 +7,8 @@
     </a>
     <form class="d-flex" role="search" *ngIf="menuType !== 'seller'">
       <input class="form-control me-2" type="search" placeholder="Search Items" #searchInput
-        (keyup)="searchProduct($event)">
-      <button class="btn btn-outline-success" type="submit" (click)="submitSearch(searchInput.value)">Search</button>
+        (keyup)="searchProduct($event)" (blur)="hideResult()">
+      <button class="btn btn-outline-success" type="submit" (click)="submitSearch(searchInput.value)" >Search</button>
       <ul class="suggested-result">
         <li *ngFor="let item of searchResult">
           <a >{{item.name}}</a>
