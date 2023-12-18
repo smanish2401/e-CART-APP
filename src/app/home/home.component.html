@@ -9,10 +9,11 @@
     <ngb-carousel *ngIf="popularProducts && !isLoading">
         <ng-template *ngFor="let item of popularProducts" ngbSlide>
             <div class="picsum-img-wrapper">
-                <img [src]="item.image" class="product-img" alt="product-img" />
+                <a routerLink="product-details/{{item.id}}">
+                <img [src]="item.image" class="product-img" alt="product-img"/></a>
             </div>
             <div class="carousel-caption">
-                <h3>{{item.name}}</h3>
+               <a routerLink="product-details/{{item.id}}" style="text-decoration: none;color: #fff;"> <h3>{{item.name}}</h3></a>
                 <p>{{item.description}}</p>
             </div>
 
@@ -28,9 +29,9 @@
         <div class="flex">
             <div class="col-sm-3" *ngFor="let item of trendyProducts">
                 <div class="product-item">
-                    <img src="{{item.image}}" alt="">
+                    <a routerLink="product-details/{{item.id}}"> <img src="{{item.image}}" alt=""></a>
                     <div>
-                        <h5 style="color: #0a7543;">{{item.name}}</h5>
+                        <a routerLink="product-details/{{item.id}}"  style="text-decoration: none;color: #fff"><h5 style="color: #0a7543;">{{item.name}}</h5></a>
                     </div>
 
                     <div>

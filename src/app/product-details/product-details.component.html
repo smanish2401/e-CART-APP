@@ -1,1 +1,23 @@
-<p>product-details works!</p>
+<div class="row product-details" *ngIf="productData">
+    <div class="col-sm-6">
+        <img class="product-img" src="{{productData.image}}" alt="">
+
+    </div>
+    <div class="col-sm-6">
+        <div class="details">
+            <h2 style="color: #0a7543;;">{{productData.name}}</h2>
+            <h4>Price : ₹ {{productData.price}}</h4>
+
+            <div>
+                color :
+                <h4 [style.backgroundColor]="productData.color" class="product-color"></h4>
+                
+            </div>
+            <h5>Category: <span style="color: #0a7543; font-weight: 700;">{{productData.category}}</span></h5>
+            <h6>{{productData.description}}</h6>
+            <button class="cart-button" >Add to Cart</button>
+            
+        </div>
+    </div>
+
+</div>
