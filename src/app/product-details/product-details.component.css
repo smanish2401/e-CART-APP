@@ -16,11 +16,12 @@
 }
 .details{
     margin-top: 40px;
+    
 }
 .cart-button{
     
     border-radius: 8px;
-    min-width: 150px;
+    min-width: 170px;
     background-color: #0a7543;
     color: #fff;
     margin-top: 20px;
@@ -32,4 +33,9 @@
 }
 .cart-button:hover{
     background-color: #084026;
+}
+h1{
+    color: #0a7543;
+    margin-bottom: 30px;
+   
 }

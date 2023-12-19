@@ -62,6 +62,9 @@ export class HeaderComponent {
   hideResult(){
     this.searchResult = undefined
   }
+  redirectDetails(id:number){
+    this.route.navigate(['product-details/' +id])
+  }
 }
 
 

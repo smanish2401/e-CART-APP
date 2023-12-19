@@ -29,9 +29,9 @@
         <div class="flex">
             <div class="col-sm-3" *ngFor="let item of trendyProducts">
                 <div class="product-item">
-                    <a routerLink="product-details/{{item.id}}"> <img src="{{item.image}}" alt=""></a>
+                    <a routerLink="/product-details/{{item.id}}"> <img src="{{item.image}}" alt=""></a>
                     <div>
-                        <a routerLink="product-details/{{item.id}}"  style="text-decoration: none;color: #fff"><h5 style="color: #0a7543;">{{item.name}}</h5></a>
+                        <a routerLink="/product-details/{{item.id}}"  style="text-decoration: none;color: #fff"><h5 style="color: #0a7543;">{{item.name}}</h5></a>
                     </div>
 
                     <div>
