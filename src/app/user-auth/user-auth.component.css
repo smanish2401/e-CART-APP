@@ -1,0 +1,10 @@
+.signUp{
+display: flex ;
+justify-content: center;
+margin-top: 20px;
+}
+h2{
+    color:aliceblue;
+    margin-bottom: 20px;
+    text-align: center;
+}
