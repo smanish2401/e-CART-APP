@@ -12,7 +12,8 @@ import { product } from '../data-types';
 })
 export class HeaderComponent {
   menuType: string = 'default';
-  sellerName: string = ''
+  sellerName: string = '';
+  userName: string = ''
   icon = faUser;
   searchResult:undefined | product[];
   constructor(private route: Router, private product:ProductsService) { }
@@ -31,6 +32,12 @@ export class HeaderComponent {
 
 
         }
+         else if(localStorage.getItem('users') && val.url.includes('users')){
+          let userStore = localStorage.getItem('users');
+          let userData = userStore && JSON.parse(userStore)[0];
+          this.menuType = 'users';
+          this.userName = userData.name
+         }
         else {
           this.menuType = 'default'
         }

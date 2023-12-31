@@ -1,5 +1,6 @@
-.signUp{
+.user-auth{
 display: flex ;
+
 justify-content: center;
 margin-top: 20px;
 }
@@ -7,4 +8,21 @@ h2{
     color:aliceblue;
     margin-bottom: 20px;
     text-align: center;
+}
+.auth-toggle-link{
+    margin-top: 10px;
+    color:aliceblue;
+    cursor: pointer;
+    text-align: right;
+    font-size: 14px;
+}
+.auth-toggle-link:hover{
+    color:rgb(194, 180, 180)
+}
+.invalid-input{
+    
+    margin-top: 0;
+}
+button:disabled{
+    cursor: not-allowed;
 }

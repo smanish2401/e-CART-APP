@@ -52,7 +52,28 @@
         <li class="nav-item">
           <a class="nav-link logout" (click)="logout()" style="color: red;" title="logout">Logout</a>
         </li>
-
+      </ul>
+      <!--user area-->
+        <ul class="navbar-nav " *ngSwitchCase="'users'">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/seller">Seller</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="#">{{userName | titlecase}}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">MyOrder</a>
+          </li>
+          <li>
+            <a href="">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cart(0)</a>
+          </li>
+        </ul>
 
         <!-- <li class="nav-item">
             <a class="nav-link" href="#">MyOrder</a>
@@ -60,7 +81,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Cart(0)</a>
           </li> -->
-      </ul>
+      
 
     </div>
   </div>
