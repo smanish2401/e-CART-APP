@@ -1,7 +1,7 @@
 import { query } from '@angular/animations';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faUserCircle, faUsersRectangle } from '@fortawesome/free-solid-svg-icons';
 import { ProductsService } from '../services/product.service';
 import { product } from '../data-types';
 
@@ -15,6 +15,9 @@ export class HeaderComponent {
   sellerName: string = '';
   userName: string = ''
   icon = faUser;
+  icon2 = faUserCircle;
+  
+
   searchResult:undefined | product[];
   constructor(private route: Router, private product:ProductsService) { }
 
@@ -24,17 +27,19 @@ export class HeaderComponent {
         //console.warn(val.url)
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
           // console.warn('In seller area');
+          if(localStorage.getItem('seller')){
           let sellerStore = localStorage.getItem('seller');
-          let sellerData = sellerStore && JSON.parse(sellerStore)[0]
+          let sellerData = sellerStore && JSON.parse(sellerStore)[0];
           this.menuType = 'seller';
           this.sellerName = sellerData.name
 
-
+          }
 
         }
-         else if(localStorage.getItem('users') && val.url.includes('users')){
+         else if(localStorage.getItem('users')){
           let userStore = localStorage.getItem('users');
-          let userData = userStore && JSON.parse(userStore)[0];
+          let userData = userStore && JSON.parse(userStore);
+        
           this.menuType = 'users';
           this.userName = userData.name
          }
@@ -50,6 +55,10 @@ export class HeaderComponent {
     localStorage.removeItem('seller')
 
     this.route.navigate(["/"])
+  }
+  userlogout(){
+    localStorage.removeItem('users');
+    this.route.navigate(['/user'])
   }
   searchProduct(query:KeyboardEvent){
    if(query){

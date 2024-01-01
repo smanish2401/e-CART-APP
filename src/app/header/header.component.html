@@ -36,6 +36,30 @@
           <a class="nav-link" href="#">Cart(0)</a>
         </li>
       </ul>
+      <!--user-->
+      <ul class="navbar-nav " *ngSwitchCase="'users'">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/seller">Seller</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">MyOrder</a>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link seller-name" ngbTooltip="{{userName | titlecase}}"><fa-icon 
+            [icon]="icon2" size="xl"></fa-icon></span>
+        </li>
+        <li>
+          <a class="nav-link" style="color: red; cursor: pointer;" title="logout" (click)="userlogout()">Logout</a>
+        </li>
+       
+       
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cart(0)</a>
+        </li>
+      </ul>
       <!--for seller-->
       <ul class="navbar-nav" *ngSwitchCase="'seller'">
         <li class="nav-item">
@@ -54,26 +78,7 @@
         </li>
       </ul>
       <!--user area-->
-        <ul class="navbar-nav " *ngSwitchCase="'users'">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/seller">Seller</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="#">{{userName | titlecase}}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">MyOrder</a>
-          </li>
-          <li>
-            <a href="">Logout</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Cart(0)</a>
-          </li>
-        </ul>
+        
 
         <!-- <li class="nav-item">
             <a class="nav-link" href="#">MyOrder</a>

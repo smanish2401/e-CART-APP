@@ -23,7 +23,7 @@
     <!--logIn area-->
     <div class="login" *ngIf="showLogIn">
 
-        <form class="common-form" #signUpForm="ngForm" (ngSubmit)="signUp(signUpForm.value)">
+        <form class="common-form" #logInForm="ngForm" (ngSubmit)="logIn(logInForm.value)">
             <h2>User-LogIn</h2>
 
 
@@ -34,7 +34,7 @@
                 #password="ngModel" required minlength="8" maxlength="20">
             <p class="invalid-input" *ngIf="password.invalid && password.touched">! Please enter at least 8
                 characters</p>
-            <button class="form-button" type="submit">SignUp</button>
+            <button class="form-button" [disabled]="logInForm.invalid" type="submit">LogIn</button>
             <a class="auth-toggle-link" (click)="openSignup()">Don't have account? Click to SignUp</a>
 
         </form>
