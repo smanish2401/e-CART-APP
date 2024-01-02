@@ -9,8 +9,9 @@ import { product } from '../data-types';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent {
-
-  productData : undefined | product
+  productQuantity:number=1;
+  productData : undefined | product;
+  quantity:number=1
   constructor(private activeRoute:ActivatedRoute,private product:ProductsService) {}
 
   ngOnInit():void{
@@ -23,4 +24,21 @@ export class ProductDetailsComponent {
      
     })
   }
+  handleQuantity(val:string){
+    if(this.productQuantity<20 && val==='plus'){
+      this.productQuantity += 1
+    }
+    else if(this.productQuantity>1 && val==='minus'){
+      this.productQuantity -= 1
+    }
+  }
+  AddToCart(){
+    if(this.productData){
+      this.productData.quantity = this.productQuantity
+   
+    if(!localStorage.getItem('users')){
+      this.product.localAddToCart(this.productData)
+    }
+  }
+}
 }

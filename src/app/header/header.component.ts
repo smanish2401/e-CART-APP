@@ -16,6 +16,7 @@ export class HeaderComponent {
   userName: string = ''
   icon = faUser;
   icon2 = faUserCircle;
+  cartItems=0;
   
 
   searchResult:undefined | product[];
@@ -49,6 +50,14 @@ export class HeaderComponent {
 
       }
 
+    })
+    let cartData = localStorage.getItem('localCart');
+    if(cartData){
+      this.cartItems = JSON.parse(cartData).length
+    }
+    this.product.cartData.subscribe((items)=>{
+      console.log("item",items)
+      this.cartItems = items.length
     })
   }
   logout() {

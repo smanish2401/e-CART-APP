@@ -15,7 +15,14 @@
             </div>
             <h5>Category: <span style="color: #0a7543; font-weight: 700;">{{productData.category}}</span></h5>
             <h6>{{productData.description}}</h6>
-            <button class="cart-button" >Add to Cart</button>
+            <div class="quantity">
+                <h5>quantity :</h5>
+                <button (click)="handleQuantity('minus')">-</button>
+                <input type="text"value= {{productQuantity}}>
+                <button (click)="handleQuantity('plus')">+</button>
+            </div>
+            <button class="cart-button" (click)="AddToCart()" >Add to Cart</button>
+          
             
         </div>
     </div>
