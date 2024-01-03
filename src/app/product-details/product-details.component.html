@@ -18,7 +18,7 @@
             <div class="quantity">
                 <h5>quantity :</h5>
                 <button (click)="handleQuantity('minus')">-</button>
-                <input type="text"value= {{productQuantity}}>
+                <input type="button" style="cursor: text;" value= {{productQuantity}}>
                 <button (click)="handleQuantity('plus')">+</button>
             </div>
             <button class="cart-button" (click)="AddToCart()" >Add to Cart</button>
