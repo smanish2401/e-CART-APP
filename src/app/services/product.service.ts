@@ -6,45 +6,45 @@ import { product } from '../data-types';
   providedIn: 'root'
 })
 export class ProductsService {
-  cartData= new EventEmitter<product[] | []>()
-  constructor(private http:HttpClient) { }
+  cartData = new EventEmitter<product[] | []>()
+  constructor(private http: HttpClient) { }
 
-  addProduct(data:product){
-    return this.http.post('http://localhost:3000/new-products',data)
+  addProduct(data: product) {
+    return this.http.post('http://localhost:3000/new-products', data)
   }
-  productList(){
+  productList() {
     return this.http.get<product[]>('http://localhost:3000/new-products')
   }
-  deleteProduct(id:number){
+  deleteProduct(id: number) {
     return this.http.delete(`http://localhost:3000/new-products/${id}`)
   }
-  getProduct(id:string){
+  getProduct(id: string) {
     return this.http.get<product>(`http://localhost:3000/new-products/${id}`)
   }
-  updateProduct(product:product){
-    return this.http.put<product>(`http://localhost:3000/new-products/${product.id}`,product)
+  updateProduct(product: product) {
+    return this.http.put<product>(`http://localhost:3000/new-products/${product.id}`, product)
   }
-  popularProducts(){
+  popularProducts() {
     return this.http.get<product[]>('http://localhost:3000/new-products?_limit=3')
   }
-  trendyProducts(){
+  trendyProducts() {
     return this.http.get<product[]>('http://localhost:3000/new-products')
   }
-  searchProducts(query:string){
+  searchProducts(query: string) {
     return this.http.get<product[]>(`http://localhost:3000/new-products?q=${query}`)
   }
-  localAddToCart(data:product){
+  localAddToCart(data:product) {
     let cartData = [];
     let localCart = localStorage.getItem('localCart');
-    if(!localCart){
-      localStorage.setItem('locaCart',JSON.stringify([data]))
-      this.cartData.emit([data]);
-      console.log(data)
+    if (!localCart) {
+      localStorage.setItem('localCart', JSON.stringify([data]));
+      this.cartData.emit([data])
     }
-    else{
+    else {
+
       cartData = JSON.parse(localCart);
       cartData.push(data);
-      localStorage.setItem('localCart',JSON.stringify(cartData));
+      localStorage.setItem('localCart', JSON.stringify(cartData))
       this.cartData.emit(cartData)
     }
   }

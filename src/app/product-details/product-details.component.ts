@@ -11,7 +11,8 @@ import { product } from '../data-types';
 export class ProductDetailsComponent {
   productQuantity:number=1;
   productData : undefined | product;
-  quantity:number=1
+  quantity:number=1;
+  removeCart= false;
   constructor(private activeRoute:ActivatedRoute,private product:ProductsService) {}
 
   ngOnInit():void{
@@ -37,7 +38,8 @@ export class ProductDetailsComponent {
       this.productData.quantity = this.productQuantity
    
     if(!localStorage.getItem('users')){
-      this.product.localAddToCart(this.productData)
+      this.product.localAddToCart(this.productData);
+      this.removeCart = true;
     }
   }
 }
