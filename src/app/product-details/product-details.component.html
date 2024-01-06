@@ -11,20 +11,20 @@
             <div>
                 color :
                 <h4 [style.backgroundColor]="productData.color" class="product-color"></h4>
-                
+
             </div>
             <h5>Category: <span style="color: #0a7543; font-weight: 700;">{{productData.category}}</span></h5>
             <h6>{{productData.description}}</h6>
             <div class="quantity">
                 <h5>Qty :</h5>
                 <button (click)="handleQuantity('minus')">-</button>
-                <input type="button" style="cursor: text;" value= {{productQuantity}}>
+                <input type="button" style="cursor: text;" value={{productQuantity}}>
                 <button (click)="handleQuantity('plus')">+</button>
             </div>
-            <button class="cart-button" (click)="AddToCart()" *ngIf="!removeCart" >Add to Cart</button>
-            <button class="cart-button" (click)="AddToCart()" *ngIf="removeCart" >Remove to Cart</button>
-          
-            
+            <button class="cart-button" (click)="AddToCart()" *ngIf="!removeCart">Add to Cart</button>
+            <button class="cart-button" (click)="AddToCart()" *ngIf="removeCart">Remove to Cart</button>
+
+
         </div>
     </div>
 
