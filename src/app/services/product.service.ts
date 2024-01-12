@@ -48,4 +48,16 @@ export class ProductsService {
       this.cartData.emit(cartData)
     }
   }
+  removeToLocalCart(productId:number){
+    let cartData =  localStorage.getItem('localCart');
+    if(cartData){
+      let items:product[] = JSON.parse(cartData);
+      items = items.filter((item:product)=> productId!==item.id)
+       console.log(items)
+       localStorage.setItem('localCart', JSON.stringify(items))
+       this.cartData.emit(items)
+    }
+  }
 }
+
+

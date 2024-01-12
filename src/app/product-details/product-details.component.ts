@@ -9,6 +9,7 @@ import { product } from '../data-types';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent {
+
   productQuantity:number=1;
   productData : undefined | product;
   quantity:number=1;
@@ -42,5 +43,8 @@ export class ProductDetailsComponent {
       this.removeCart = true;
     }
   }
+}
+removeToCart(productId:number){
+  this.product.removeToLocalCart(productId)
 }
 }
