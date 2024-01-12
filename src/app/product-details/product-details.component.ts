@@ -45,6 +45,7 @@ export class ProductDetailsComponent {
   }
 }
 removeToCart(productId:number){
-  this.product.removeToLocalCart(productId)
+  this.product.removeToLocalCart(productId);
+  this.removeCart = false;
 }
 }
