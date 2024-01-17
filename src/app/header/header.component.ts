@@ -16,11 +16,11 @@ export class HeaderComponent {
   userName: string = ''
   icon = faUser;
   icon2 = faUserCircle;
-  cartItems=0;
-  
+  cartItems = 0;
 
-  searchResult:undefined | product[];
-  constructor(private route: Router, private product:ProductsService) { }
+
+  searchResult: undefined | product[];
+  constructor(private route: Router, private product: ProductsService) { }
 
   ngOnInit(): void {
     this.route.events.subscribe((val: any) => {
@@ -28,22 +28,22 @@ export class HeaderComponent {
         //console.warn(val.url)
         if (localStorage.getItem('seller') && val.url.includes('seller')) {
           // console.warn('In seller area');
-          if(localStorage.getItem('seller')){
-          let sellerStore = localStorage.getItem('seller');
-          let sellerData = sellerStore && JSON.parse(sellerStore)[0];
-          this.menuType = 'seller';
-          this.sellerName = sellerData.name
+          if (localStorage.getItem('seller')) {
+            let sellerStore = localStorage.getItem('seller');
+            let sellerData = sellerStore && JSON.parse(sellerStore)[0];
+            this.menuType = 'seller';
+            this.sellerName = sellerData.name
 
           }
 
         }
-         else if(localStorage.getItem('users')){
+        else if (localStorage.getItem('users')) {
           let userStore = localStorage.getItem('users');
           let userData = userStore && JSON.parse(userStore);
-        
+
           this.menuType = 'users';
           this.userName = userData.name
-         }
+        }
         else {
           this.menuType = 'default'
         }
@@ -52,10 +52,10 @@ export class HeaderComponent {
 
     })
     let cartData = localStorage.getItem('localCart');
-    if(cartData){
+    if (cartData) {
       this.cartItems = JSON.parse(cartData).length
     }
-    this.product.cartData.subscribe((items)=>{
+    this.product.cartData.subscribe((items) => {
       //console.log("item",items)
       this.cartItems = items.length
     })
@@ -65,30 +65,30 @@ export class HeaderComponent {
 
     this.route.navigate(["/"])
   }
-  userlogout(){
+  userlogout() {
     localStorage.removeItem('users');
     this.route.navigate(['/user'])
   }
-  searchProduct(query:KeyboardEvent){
-   if(query){
-    const element = query.target as HTMLInputElement;
-    this.product.searchProducts(element.value).subscribe((result)=>{
-      //console.log(result);
-      if(result.length > 5){
-        result.length = 5
-      }
-      this.searchResult = result;
-    })
-   }
+  searchProduct(query: KeyboardEvent) {
+    if (query) {
+      const element = query.target as HTMLInputElement;
+      this.product.searchProducts(element.value).subscribe((result) => {
+        //console.log(result);
+        if (result.length > 5) {
+          result.length = 5
+        }
+        this.searchResult = result;
+      })
+    }
   }
-  submitSearch(val:string){
+  submitSearch(val: string) {
     this.route.navigate([`search/${val}`])
   }
-  hideResult(){
+  hideResult() {
     this.searchResult = undefined
   }
-  redirectDetails(id:number){
-    this.route.navigate(['product-details/' +id])
+  redirectDetails(id: number) {
+    this.route.navigate(['product-details/' + id])
   }
 }
 
