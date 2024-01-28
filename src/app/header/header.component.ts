@@ -33,7 +33,7 @@ export class HeaderComponent {
             let sellerData = sellerStore && JSON.parse(sellerStore)[0];
             this.menuType = 'seller';
             this.sellerName = sellerData.name
-
+;
           }
 
         }
@@ -42,7 +42,8 @@ export class HeaderComponent {
           let userData = userStore && JSON.parse(userStore);
 
           this.menuType = 'users';
-          this.userName = userData.name
+          this.userName = userData.name;
+          this.product.getCartList(userData.id)
         }
         else {
           this.menuType = 'default'
