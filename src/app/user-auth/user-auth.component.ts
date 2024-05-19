@@ -16,6 +16,7 @@ export class UserAuthComponent {
 
   signUp(data:signup){
     this.user.userSignUp(data)
+   // console.log("hello manish",data)
    
   }
   logIn(data:login){
