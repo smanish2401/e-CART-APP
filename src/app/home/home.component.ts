@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../services/product.service';
 import { product } from '../data-types';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-home',
@@ -10,11 +11,14 @@ import { product } from '../data-types';
 export class HomeComponent {
 popularProducts: undefined | product[]
 trendyProducts: undefined | product[]
-isLoading:boolean=false;
-  constructor(private product:ProductsService) {}
+  constructor(private product:ProductsService,
+    private spinner: NgxSpinnerService,
+
+
+  ) {}
 
   ngOnInit():void{
-    this.isLoading=true
+    this.spinner.show()
     this.product.popularProducts().subscribe((data)=>{
       if(data){
         console.log(`popular products ${data}`)
@@ -25,8 +29,10 @@ isLoading:boolean=false;
     this.product.trendyProducts().subscribe((data)=>{
       if(data){
         this.trendyProducts= data;
+        console.log( this.trendyProducts);
+        
         setTimeout(() => {
-          this.isLoading=false
+          this.spinner.hide()
         },1000);
       }
     })

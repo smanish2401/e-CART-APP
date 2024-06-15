@@ -19,11 +19,12 @@ export class ProductDetailsComponent {
 
   ngOnInit():void{
     let productId = this.activeRoute.snapshot.paramMap.get('productId')
-    //console.warn(productId);
+    console.warn(productId);
     
     productId && this.product.getProduct(productId).subscribe((data)=>{
      console.warn(data);
     this.productData  = data;
+     //console.log(this.productData);
      
     })
 

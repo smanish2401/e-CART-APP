@@ -17,7 +17,8 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
 import { SearchProductComponent } from './search-product/search-product.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { UserAuthComponent } from './user-auth/user-auth.component';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,9 @@ import { UserAuthComponent } from './user-auth/user-auth.component';
     NgbModule,
     FormsModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

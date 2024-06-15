@@ -8,6 +8,7 @@ export interface login{
     password:string
 }
 export interface product{
+title: any
     name:string,
     price:number,
     color:string,

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 import { cart, product } from '../data-types';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class ProductsService {
   addProduct(data: product) {
     return this.http.post('http://localhost:3000/new-products', data)
   }
+ 
   productList() {
     return this.http.get<product[]>('http://localhost:3000/new-products')
   }
@@ -19,17 +21,33 @@ export class ProductsService {
     return this.http.delete(`http://localhost:3000/new-products/${id}`)
   }
   getProduct(id: string) {
-    return this.http.get<product>(`http://localhost:3000/new-products/${id}`)
+    return this.http.get<product>(`https://fakestoreapi.com/products/${id}`)
   }
   updateProduct(product: product) {
     return this.http.put<product>(`http://localhost:3000/new-products/${product.id}`, product)
   }
   popularProducts() {
-    return this.http.get<product[]>('http://localhost:3000/new-products?_limit=3')
+    return this.http.get<product[]>('https://fakestoreapi.com/products?limit=5')
+    .pipe(map(
+      res =>{
+        return res
+      }
+    ))
   }
-  trendyProducts() {
-    return this.http.get<product[]>('http://localhost:3000/new-products')
+  // popularProducts() {
+  //   return this.http.get<product[]>('http://localhost:3000/new-products?_limit=3')
+  // }
+  trendyProducts(): Observable<any>{
+    return this.http.get('https://fakestoreapi.com/products')
+    .pipe(map(
+      res => {
+          return res;
+      }
+  ));
   }
+  // trendyProducts() {
+  //   return this.http.get<product[]>('http://localhost:3000/new-products')
+  // }
   searchProducts(query: string) {
     return this.http.get<product[]>(`http://localhost:3000/new-products?q=${query}`)
   }
@@ -38,7 +56,7 @@ export class ProductsService {
     let localCart = localStorage.getItem('localCart');
     if (!localCart) {
       localStorage.setItem('localCart', JSON.stringify([data]));
-      this.cartData.emit([data])
+      this.cartData.emit([data]);
     }
     else {
 

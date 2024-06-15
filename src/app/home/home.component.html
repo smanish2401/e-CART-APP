@@ -1,12 +1,12 @@
 <div class="container">
-    <div class="text-center" *ngIf="isLoading">
+    <!-- <div class="text-center" *ngIf="isLoading">
         <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
 
-    </div>
+    </div> -->
 
-    <ngb-carousel *ngIf="popularProducts && !isLoading">
+    <ngb-carousel *ngIf="popularProducts ">
         <ng-template *ngFor="let item of popularProducts" ngbSlide>
             <div class="picsum-img-wrapper">
                 <a routerLink="product-details/{{item.id}}">
@@ -20,7 +20,7 @@
         </ng-template>
     </ngb-carousel>
 
-    <div class="product-list-wrapper" *ngIf="!isLoading">
+    <div class="product-list-wrapper" >
         <h2 style="color: #0a7543;">Trendy Products <svg xmlns="http://www.w3.org/2000/svg" height="30" width="40"
                 viewBox="0 0 484 612" style="fill: #deaf22;">
                 <path
@@ -31,7 +31,7 @@
                 <div class="product-item">
                     <a routerLink="/product-details/{{item.id}}"> <img src="{{item.image}}" alt=""></a>
                     <div>
-                        <a routerLink="/product-details/{{item.id}}"  style="text-decoration: none;color: #fff"><h5 style="color: #0a7543;">{{item.name}}</h5></a>
+                        <a routerLink="/product-details/{{item.id}}"  style="text-decoration: none;color: #fff"><h5 style="color: #0a7543;">{{item.title}}</h5></a>
                     </div>
 
                     <div>
